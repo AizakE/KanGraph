@@ -1,0 +1,119 @@
+<html>
+
+<head>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit-icons.min.js"></script>
+  <script src="javascripts/Drawing.js"></script>
+  <input type="hidden" id="shipStatus" value="<%= jsonStatus %>">
+  <input type="hidden" id="shipBanner" value="<%= bannerName %>">
+  <input type="hidden" id="shipList" value="<%= jsonShipList %>">
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/css/uikit.min.css" />
+  <link rel="stylesheet" href="stylesheets/Drawing.css">
+  </link>
+</head>
+
+<body>
+  <div class="uk-background-primary uk-light uk-padding-small uk-panel uk-text-large">艦娘レーダーチャート</div>
+
+  <div uk-grid class="uk-padding-small">
+    <div class="uk-width-1-3 uk-margin-left">
+      <ul id='classSelection' uk-accordion>
+        <li>
+          <a class='shipClass uk-accordion-title ' href="#">戦艦</a>
+          <div class='innerSelection uk-accordion-content' id='senkanClass'>
+          </div>
+        </li>
+        <li>
+          <a class='shipClass uk-accordion-title' href="#">空母</a>
+          <div class='innerSelection uk-accordion-content' id='kuuboClass'>
+          </div>
+        </li>
+        <li>
+          <a class='shipClass uk-accordion-title' href="#">重巡洋艦</a>
+          <div class='innerSelection uk-accordion-content' id='juujunClass'>
+          </div>
+        </li>
+        <li>
+          <a class='shipClass uk-accordion-title' href="#">軽巡洋艦</a>
+          <div class='innerSelection uk-accordion-content' id='keijunClass'>
+          </div>
+        </li>
+        <li>
+          <a class='shipClass uk-accordion-title' href="#">駆逐艦</a>
+          <div class='innerSelection uk-accordion-content' id='kuchikuClass'>
+          </div>
+        </li>
+        <li>
+          <a class='shipClass uk-accordion-title' href="#">潜水艦</a>
+          <div class='innerSelection uk-accordion-content' id='sensuiClass'>
+          </div>
+        </li>
+        <li>
+          <a class='shipClass uk-accordion-title' href="#">海防艦</a>
+          <div class='innerSelection uk-accordion-content' id='kaibouClass'>
+          </div>
+        </li>
+        <li>
+          <a class='shipClass uk-accordion-title' href="#">その他</a>
+          <div class='innerSelection uk-accordion-content' id='otherClass'>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="uk-width-1-6">
+      <button class="uk-button uk-button-secondary" id='btnGraphView'>
+        チャートを表示
+      </button>
+    </div>
+
+    <div id='shipCard' class="uk-card uk-card-default uk-width-2-5" style='display:none'>
+      <div class="uk-grid">
+        <div class='uk-width-3-5'>
+          <div id='graphArea'>
+          </div>
+        </div>
+        <div class='uk-width-2-5'>
+          <div class='divGraphGrid' id='shipBanner1'>
+            <img id="ship1Img" src= '' ></img>
+            <p class="bannerShipName" id="ship1Name"></p>
+          </div>
+          <div class='divGraphGrid' id='shipBanner2'>
+            <img id="ship2Img"></img>
+            <p class="bannerShipName" id="ship2Name"></p>
+          </div>
+          <div class='divGraphGrid' id='shipBanner3'>
+            <img id="ship3Img"></img>
+            <p class="bannerShipName" id="ship3Name"></p>
+          </div>
+          <div class='divGraphGrid' id='shipBanner4'>
+            <img id="ship4Img"></img>
+            <p class="bannerShipName" id="ship4Name"></p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="uk-overflow-auto">
+          <table class="uk-table uk-table-small uk-table-striped" id='statusTable'>
+            <thead>
+              <tr>
+                <th>艦名</th>
+                <th>耐久</th>
+                <th>火力</th>
+                <th>対空</th>
+                <th>雷装</th>
+                <th>運 </th>
+                <th>装甲</th>
+              </tr>
+            </thead>
+            <tbody id='statusTbody'></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

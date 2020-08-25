@@ -1,0 +1,41 @@
+.divGraphGrid {
+    width: 250px;
+    height: 80px;
+    font-size: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;    
+    vertical-align: bottom;
+    position: relative;
+}
+
+.bannerShipName {
+    color: white;
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: black;
+    position: absolute;
+    bottom: -20px;
+}
+
+.shipClass {
+cursor: pointer;
+padding: 10px;;
+}
+
+.innerSelection li {
+    margin: 2px;
+}
+ 
+#shipBanner1 {
+    background-color: cc0000;
+}
+#shipBanner2 {
+    background-color: 00cc00;
+}
+#shipBanner3 {
+    background-color: 0000cc;
+}
+#shipBanner4 {
+    background-color: 333333;
+}
